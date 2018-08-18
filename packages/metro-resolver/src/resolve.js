@@ -309,7 +309,7 @@ function resolveFile(
     platform);
 
     if (assetResult.type !== 'failed') {
-      return mapResult(result, filePaths => ({ type: 'assetFiles', filePaths }));
+      return mapResult(assetResult, filePaths => ({ type: 'assetFiles', filePaths }));
     }
   }
 
