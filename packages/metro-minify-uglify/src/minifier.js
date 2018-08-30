@@ -46,7 +46,7 @@ function minify(
   inputMap: ?BabelSourceMap,
   options: MinifyOptions,
 ) {
-  const result = uglify.minify(inputCode, {
+  const result = metroMinifier.uglifyModule.minify(inputCode, {
     mangle: {
       toplevel: false,
       reserved: options.reserved,
@@ -80,6 +80,7 @@ function minify(
 const metroMinifier: MetroMinifier = {
   noSourceMap,
   withSourceMap,
+  uglifyModule: require('uglify-es')
 };
 
 module.exports = metroMinifier;
